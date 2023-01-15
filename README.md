@@ -1,5 +1,6 @@
 # MAW
-Machine A Woosh - Simple graphical noise shaping tool 
+Machine A Woosh - Simple graphical noise shaping tool
+You will need the free program Pure Data to run this.
 
 /!\ CARE FOR YOUR EARS !! Audio is nice and all, but hearing damage is real, so always have a way to kill the process or mute the sound very fast in case things get messy. I put as many guard rails as I could, but MAW is STILL an experimental student project, so don't trust anything and don't blow up your ears please. I won't be responsible if you get hurt using my Pure Data patch.
 
