@@ -1,0 +1,68 @@
+#N canvas 96 96 1076 581 12;
+#X listbox 62 393 7 0 0 0 - - - 0;
+#X obj 84 224 + 1;
+#X floatatom 173 228 5 0 0 0 - - - 0;
+#X obj 175 187 f;
+#X obj 92 179 % 500;
+#X obj 144 95 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X msg 811 259 0;
+#X obj 218 92 r stop;
+#X obj 804 293 s stop;
+#X obj 814 207 sel 499;
+#X obj 784 235 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 567 296 array set playback;
+#X msg 567 258 1;
+#X obj 628 236 r stop;
+#X msg 31 118 \; playback const 0;
+#X obj 567 221 % 6;
+#X msg 741 361 \; playback const 0;
+#X obj 745 326 delay 10;
+#X obj 173 92 del 1;
+#X obj 175 143 metro 0.1;
+#X obj 62 364 array get wavearray;
+#X obj 245 333 r numpreset;
+#X msg 245 376 set preset\$1;
+#X obj 248 498 tabwrite preset9;
+#X obj 78 52 r savepreset;
+#X text 326 27 Ce sous patch sert à écrire dans l'array du preset
+sélectionné le contenu de l'array wavearray;
+#X text 40 13 le send savepreset est embed dans le bouton SAVE Preset
+;
+#X text 600 161 Cette partie du sous patch gère la barre de playback
+;
+#X obj 62 419 expr if($f1 > 1 \, 1 \, $f1);
+#X obj 62 446 expr if($f1 < 0 \, 0 \, $f1);
+#X text 26 293 le send numpreset se situe dans "pd misc" pour arrondir
+la valeur de numcorrection \, qui provient du slider Select Preset
+;
+#X connect 0 0 28 0;
+#X connect 1 0 4 0;
+#X connect 2 0 11 1;
+#X connect 2 0 15 0;
+#X connect 2 0 20 0;
+#X connect 2 0 23 1;
+#X connect 3 0 1 0;
+#X connect 3 0 2 0;
+#X connect 3 0 9 0;
+#X connect 4 0 3 1;
+#X connect 5 0 19 0;
+#X connect 6 0 8 0;
+#X connect 7 0 19 0;
+#X connect 9 0 10 0;
+#X connect 10 0 6 0;
+#X connect 10 0 17 0;
+#X connect 12 0 11 0;
+#X connect 13 0 11 0;
+#X connect 15 0 12 0;
+#X connect 17 0 16 0;
+#X connect 18 0 19 0;
+#X connect 19 0 3 0;
+#X connect 20 0 0 0;
+#X connect 21 0 22 0;
+#X connect 22 0 23 0;
+#X connect 24 0 14 0;
+#X connect 24 0 18 0;
+#X connect 28 0 29 0;
+#X connect 29 0 23 0;
